@@ -1,12 +1,12 @@
 package com.eazybytes.accounts.service.impl;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.stereotype.Service;
-import com.eazybytes.accounts.AccountsApplication;
 import com.eazybytes.accounts.constants.AccountsConstants;
-import com.eazybytes.accounts.controller.AccountsController;
 import com.eazybytes.accounts.dto.CustomerDto;
 import com.eazybytes.accounts.entity.Accounts;
 import com.eazybytes.accounts.entity.Customer;
@@ -16,19 +16,14 @@ import com.eazybytes.accounts.repository.AccountsRepository;
 import com.eazybytes.accounts.repository.CustomerRepository;
 import com.eazybytes.accounts.service.IAccountService;
 
+import lombok.AllArgsConstructor;
+
 @Service
+@AllArgsConstructor
 public class AccountsServciceImpl implements IAccountService {
 
-    private final AccountsController accountsController;
-
-    private final AccountsApplication accountsApplication;
     private AccountsRepository accountsRepository;
     private CustomerRepository customerRepository;
-
-    AccountsServciceImpl(AccountsApplication accountsApplication, AccountsController accountsController) {
-        this.accountsApplication = accountsApplication;
-        this.accountsController = accountsController;
-    }
 
     /**
      * 
